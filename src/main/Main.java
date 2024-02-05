@@ -71,34 +71,34 @@ public class Main {
 				case "1":
 					do {
 						repeatCase= 'Y';
-          secondaryMenuChoice =  getMenuSelection(customerMenu);
+						secondaryMenuChoice =  getMenuSelection(customerMenu);
 						switch (secondaryMenuChoice) {
 							case "1":
 								clearScreen();
-              System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nThe Everything Store's complete list of Customers!\n" + lineBreaker + lineBreaker + lineBreaker);
-              customers.forEach(System.out::println);
-              System.out.println("\n" + anyKey); 
-              in.nextLine();
+								System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nThe Everything Store's complete list of Customers!\n" + lineBreaker + lineBreaker + lineBreaker);
+								customers.forEach(System.out::println);
+								System.out.println("\n" + anyKey); 
+								in.nextLine();
 								break;
 								
 							case "2":
 								while(Character.toUpperCase(repeatCase) != 'N') { 
-                printFromStringInput("Customer ID" , "Customer");
-                System.out.println(carryOnSearching);
-                repeatCase = getYesNoChoice();
-              } break;
+									printFromStringInput("Customer ID" , "Customer");
+									System.out.println(carryOnSearching);
+									repeatCase = getYesNoChoice();
+								} break;
 							
 							case "3":
 								  while(Character.toUpperCase(repeatCase) != 'N') { 
-                  addNewListEntryFromUser("Customer", "ID", "First name", "Surname", "Address", "Telephone number");
-                  System.out.println("\n" + addMoreCustomers);
-                  repeatCase = getYesNoChoice();
-					        }break;
+									  addNewListEntryFromUser("Customer", "ID", "First name", "Surname", "Address", "Telephone number");
+									  System.out.println("\n" + addMoreCustomers);
+									  repeatCase = getYesNoChoice();
+								  }break;
 
 							case "4":
 								do {
 									repeatCase= 'Y';
-                tertiaryMenuChoice =  getMenuSelection(customerUpdateOptions);
+									tertiaryMenuChoice =  getMenuSelection(customerUpdateOptions);
 									switch (tertiaryMenuChoice){ 					
 										case "1":
 											editListEntry("Customer", "Customer ID", "Name", "name" );
@@ -139,102 +139,100 @@ public class Main {
 				case "2":
 					do {
 						repeatCase= 'Y';
-          secondaryMenuChoice =  getMenuSelection(productMenu);
-          switch (secondaryMenuChoice) {
+						secondaryMenuChoice =  getMenuSelection(productMenu);
+						switch (secondaryMenuChoice) {
 							case "1":
-              clearScreen();
-              System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nThe Everything Store's complete list of Everything!\n" + lineBreaker + lineBreaker + lineBreaker);
-              products.forEach(System.out::println);
-              System.out.println("\n" + anyKey); 
-              in.nextLine();
-            break;
+								clearScreen();
+								System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nThe Everything Store's complete list of Everything!\n" + lineBreaker + lineBreaker + lineBreaker);
+								products.forEach(System.out::println);
+								System.out.println("\n" + anyKey); 
+								in.nextLine();
+								break;
 								
 								case "2":			
-                  do {
-                    repeatCase= 'Y';
-                    tertiaryMenuChoice = getMenuSelection(productSearchOptions);
-                    switch (tertiaryMenuChoice){
-                                            
-                      case "1":
-                        printFromStringInput("SKU code" , "Product");
-                        System.out.println(carryOnSearching);
-                        repeatCase = getYesNoChoice();
-                        if (Character.toUpperCase(repeatCase) == 'N') {
-                          tertiaryMenuChoice = "99";
-                        } break;
-                      case "2":
-                        printFromStringInput("Product description", "Product");
-                        System.out.println(carryOnSearching);
-                        repeatCase = getYesNoChoice();
-                        if (Character.toUpperCase(repeatCase) == 'N') {
-                          tertiaryMenuChoice = "99";
-                        } break;
-                    }
-                  } while (!tertiaryMenuChoice.equals("99"));
-                  secondaryMenuChoice = "99";
-                  break;
+									do {
+										repeatCase= 'Y';
+										tertiaryMenuChoice = getMenuSelection(productSearchOptions);
+										switch (tertiaryMenuChoice){    
+											case "1":
+												printFromStringInput("SKU code" , "Product");
+												System.out.println(carryOnSearching);
+												repeatCase = getYesNoChoice();
+												if (Character.toUpperCase(repeatCase) == 'N') {
+													tertiaryMenuChoice = "99";
+												} break;
+											case "2":
+												printFromStringInput("Product description", "Product");
+												System.out.println(carryOnSearching);
+												repeatCase = getYesNoChoice();
+												if (Character.toUpperCase(repeatCase) == 'N') {
+													tertiaryMenuChoice = "99";
+												} break;
+										}
+									} while (!tertiaryMenuChoice.equals("99"));
+									secondaryMenuChoice = "99";
+									break;
 								 
-              case "3": 
-              while(Character.toUpperCase(repeatCase) != 'N') { 
-                addNewListEntryFromUser("Product", "SKU Code", "Product description", "price you wish the product to be in pence", "", "");
-                System.out.println("\n" + addMoreProducts);
-                repeatCase = getYesNoChoice();
-              }break;
+								case "3": 
+									while(Character.toUpperCase(repeatCase) != 'N') { 
+										addNewListEntryFromUser("Product", "SKU Code", "Product description", "price you wish the product to be in pence", "", "");
+										System.out.println("\n" + addMoreProducts);
+										repeatCase = getYesNoChoice();
+									}break;
 								 
-							case "4": 
-								while(Character.toUpperCase(repeatCase) != 'N') {             
-                 clearScreen();
-                 editListEntry("Product", "SKU Code", "price you wish the product to be in pence", "price" );
-									 System.out.println(changeMoreProductPrices);
-									 repeatCase = getYesNoChoice();
-								}break;
+								case "4": 
+									while(Character.toUpperCase(repeatCase) != 'N') {             
+										clearScreen();
+										editListEntry("Product", "SKU Code", "price you wish the product to be in pence", "price" );
+										System.out.println(changeMoreProductPrices);
+										repeatCase = getYesNoChoice();
+									}break;
 							 
-							case "5":
-								 while(Character.toUpperCase(repeatCase) != 'N') {
-									 clearScreen();
-                 editListEntry("Product", "SKU Code", "Product description", "product description");
-									 System.out.println(changeMoreProductDescriptions);
-									 repeatCase = getYesNoChoice();
-								 }break;
+								case "5":
+									 while(Character.toUpperCase(repeatCase) != 'N') {
+										clearScreen();
+										editListEntry("Product", "SKU Code", "Product description", "product description");
+										System.out.println(changeMoreProductDescriptions);
+										repeatCase = getYesNoChoice();
+									 }break;
 								 
-							case "6": 
-								 while(Character.toUpperCase(repeatCase) != 'N') {	
-									clearScreen();
-                deleteListEntry("SKU Code", "Product");
-									 System.out.println(deleteMoreProducts);
-									 repeatCase = getYesNoChoice(); 
-								 }break;
+								case "6": 
+									 while(Character.toUpperCase(repeatCase) != 'N') {	
+										clearScreen();
+										deleteListEntry("SKU Code", "Product");
+										System.out.println(deleteMoreProducts);
+										repeatCase = getYesNoChoice(); 
+									 }break;
 								 
-							case "7":
-								do {
-									repeatCase= 'Y';
-                tertiaryMenuChoice = getMenuSelection(productStockOptions);
-									switch (tertiaryMenuChoice){
-										case "1":
-											while(Character.toUpperCase(repeatCase) != 'N') {		
-												clearScreen();
-                      inputString = getExistingStringInLists("SKU Code", "Product");
-												Product p = returnProductFromStringExact(inputString);
-                      addStockToProduct(p);
-												System.out.println("Would you like to add more stock to any other products?");
-												repeatCase = getYesNoChoice();
-											}break;
+								case "7":
+									do {
+										repeatCase= 'Y';
+										tertiaryMenuChoice = getMenuSelection(productStockOptions);
+										switch (tertiaryMenuChoice){
+											case "1":
+												while(Character.toUpperCase(repeatCase) != 'N') {		
+													clearScreen();
+													inputString = getExistingStringInLists("SKU Code", "Product");
+													Product p = returnProductFromStringExact(inputString);
+													addStockToProduct(p);
+													System.out.println("Would you like to add more stock to any other products?");
+													repeatCase = getYesNoChoice();
+												}break;
+											
+											case "2":
+												while(Character.toUpperCase(repeatCase) != 'N') {		
+													clearScreen();
+													inputString = getExistingStringInLists("SKU Code", "Product");
+													Product p = returnProductFromStringExact(inputString);
+													removeStockFromProduct(p);
+													System.out.println("Would you like to remove stock from any other products?");
+													repeatCase = getYesNoChoice();
+												}break;
+										}
 										
-                  case "2":
-											while(Character.toUpperCase(repeatCase) != 'N') {		
-												clearScreen();
-                      inputString = getExistingStringInLists("SKU Code", "Product");
-												Product p = returnProductFromStringExact(inputString);
-												removeStockFromProduct(p);
-												System.out.println("Would you like to remove stock from any other products?");
-												repeatCase = getYesNoChoice();
-											}break;
-									}
-									
-								}while(tertiaryMenuChoice != "99");
+									}while(tertiaryMenuChoice != "99");
 								secondaryMenuChoice="99";
 								break;
-						
 						}
 					}while (!secondaryMenuChoice.equals("99"));
 					break;
@@ -242,22 +240,22 @@ public class Main {
 				case "3":
 					do {
 						repeatCase= 'Y';
-          secondaryMenuChoice =  getMenuSelection(orderMenu);
+						secondaryMenuChoice =  getMenuSelection(orderMenu);
 						switch (secondaryMenuChoice) {
 							case "1":
 									clearScreen();
-                System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nThe Everything Store's complete list of Customers!\n" + lineBreaker + lineBreaker + lineBreaker);
-                listAllOrders();
-                System.out.println("\n" + anyKey); 
-                in.nextLine();
-                break;
+									System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nThe Everything Store's complete list of Customers!\n" + lineBreaker + lineBreaker + lineBreaker);
+									listAllOrders();
+									System.out.println("\n" + anyKey); 
+									in.nextLine();
+									break;
 								
 							case "2":
 								while(Character.toUpperCase(repeatCase) != 'N') { 
-					      	printFromStringInput("Order ID" , "Order");
-						      System.out.println(carryOnSearching);
-					      	repeatCase = getYesNoChoice();
-				      	} break;
+									printFromStringInput("Order ID" , "Order");
+									System.out.println(carryOnSearching);
+									repeatCase = getYesNoChoice();
+								} break;
 								
 							case "3":
 								while(Character.toUpperCase(repeatCase) != 'N') { 	
@@ -268,20 +266,20 @@ public class Main {
 								
 							case "4":
 								while(Character.toUpperCase(repeatCase) != 'N') { 
-                addNewListEntryFromUser("Order", "Customer", "Order ID", "Completion Status", "","");
-                System.out.println(addMoreOrders);
-                repeatCase = getYesNoChoice();
-              } break;
+									addNewListEntryFromUser("Order", "Customer", "Order ID", "Completion Status", "","");
+									System.out.println(addMoreOrders);
+									repeatCase = getYesNoChoice();
+								} break;
 								
 							case "5":
 								do {
 									repeatCase= 'Y';
-                tertiaryMenuChoice = getMenuSelection(orderUpdateOptions);
+									tertiaryMenuChoice = getMenuSelection(orderUpdateOptions);
 									switch (tertiaryMenuChoice){ 					
 										case "1":
 											addItemToExisitingOrder();
 											clearScreen();
-                    System.out.println("Would like you like add any more products to any more Orders?");
+											System.out.println("Would like you like add any more products to any more Orders?");
 											repeatCase = getYesNoChoice();
 											if (Character.toUpperCase(repeatCase) == 'N') {
 												tertiaryMenuChoice = "99";
@@ -289,7 +287,7 @@ public class Main {
 										case "2":
 											removeItemFromExisitingOrder();
 											clearScreen();
-                    System.out.println("Would you like to remove any more products from any more Orders?");
+											System.out.println("Would you like to remove any more products from any more Orders?");
 											repeatCase = getYesNoChoice();
 											if (Character.toUpperCase(repeatCase) == 'N') {
 												tertiaryMenuChoice = "99";
@@ -310,9 +308,9 @@ public class Main {
 					}while (!secondaryMenuChoice.equals("99"));	
 			}
 		} while (!menuChoice.equals("99"));
-  printProductsToFile();
-  printOrdersToFile();
-  printCustomersToFile();
+		printProductsToFile();
+		printOrdersToFile();
+		printCustomersToFile();
 	}
 	
 	public static void clearScreen() {  
@@ -491,51 +489,51 @@ public static void addMenuData(){
 		while(stopLooping == false){
 			if (loopCount >= 1 && loopCount <=2) {
 				 clearScreen();
-       System.out.print(errorMessage);
+				 System.out.print(errorMessage);
 			 }else if (loopCount >= 3) {
 				 stopLooping = true;
 				 break outerloop;
 			 }switch(inputList) {
-         case "Product":
-          switch (inputType){
-            case "SKU Code":
-              inputString = getNoBlankString(inputType);
-              if (returnProductFromStringExact(inputString) != null) {
-                stringExists = true;
-                stopLooping = true;
-                break outerloop;
-              } else {
-                break;
-              }
-            case "Product Description":
-              inputString = getNoBlankString(inputType);
-              if(returnProductFromStringPartial(inputString) != null){
-                stringExists = true;
-                stopLooping = true;
-                break outerloop;
-              }else {
-                break;
-              }
-           }break;
-					 case "Customer":
-						 System.out.println(lineBreaker + lineBreaker + "\n" +  "Please enter the " + inputType + "\n" + lineBreaker + lineBreaker + "\n");
-						 inputString = getInputStringFromUser();
-						 if (returnCustomerFromStringExact(inputString) != null) {
-							 stringExists = true;
-							 stopLooping = true;
-							 break outerloop;
-						 } else {
-							 break;
-						 }
-					 case "Order":
-						 inputString = testStringToInt("Order ID", "Order", "NoBlank");
-						 if (returnOrderFromStringExact(inputString) != null) {
-							 stringExists = true;
-							 stopLooping = true;
-							 break outerloop;
-						 } else {
-							 break;
-						 }
+			 	case "Product":
+			 	switch (inputType){
+			 		case "SKU Code":
+			 			inputString = getNoBlankString(inputType);
+			 			if (returnProductFromStringExact(inputString) != null) {
+			 				stringExists = true;
+			 				stopLooping = true;
+			 				break outerloop;
+			 			} else {
+			 				break;
+			 			}
+			 		case "Product Description":
+			 			inputString = getNoBlankString(inputType);
+			 			if(returnProductFromStringPartial(inputString) != null){
+			 				stringExists = true;
+			 				stopLooping = true;
+			 				break outerloop;
+			 			}else {
+			 				break;
+			 			}
+			 }break;
+				 case "Customer":
+					 System.out.println(lineBreaker + lineBreaker + "\n" +  "Please enter the " + inputType + "\n" + lineBreaker + lineBreaker + "\n");
+					 inputString = getInputStringFromUser();
+					 if (returnCustomerFromStringExact(inputString) != null) {
+						 stringExists = true;
+						 stopLooping = true;
+						 break outerloop;
+					 } else {
+						 break;
+					 }
+				 case "Order":
+					 inputString = testStringToInt("Order ID", "Order", "NoBlank");
+					 if (returnOrderFromStringExact(inputString) != null) {
+						 stringExists = true;
+						 stopLooping = true;
+						 break outerloop;
+					 } else {
+						 break;
+					 }
 				 } loopCount ++;
 		}if(stringExists == false) {
 			return "Error";
@@ -587,7 +585,7 @@ public static void addMenuData(){
 			return inputString;
 		}
 		
-}	
+	}	
 	
 	static Product returnProductFromStringPartial(String inputString) {		
 		Product toReturn = null;	 
@@ -819,22 +817,22 @@ public static void addMenuData(){
 				input1 = testStringToInt("Customer ID" , "Customer" , "Existing");
 				break;
 		}if(input1 != "Error") {
-    clearScreen();
+			clearScreen();
 			switch(inputList) {
-      case "Product":
-        input2 = getNoBlankString(val2);
-        break;
-      case "Customer":
-        input2 = getNoBlankString(val2);
-        break;
-      case "Address":
-        input2 = getNoBlankString(val2);
-        break;
-      case "Order":
-        input2 = testStringToInt(val2 , "Order" , "NoDuplicate");
-        break;
+				case "Product":
+					input2 = getNoBlankString(val2);
+					break;
+				case "Customer":
+					input2 = getNoBlankString(val2);
+					break;
+				case "Address":
+					input2 = getNoBlankString(val2);
+					break;
+				case "Order":
+					input2 = testStringToInt(val2 , "Order" , "NoDuplicate");
+					break;
 			}if(input2 != "Error") {
-      clearScreen();
+				clearScreen();
 				switch(inputList) {
 					case "Product":
 						input3 = testStringToInt(val3, "Product", "NoBlank");
@@ -850,7 +848,7 @@ public static void addMenuData(){
 						break;
 				}if(input3 != "Error") {
 					clearScreen();
-        switch(inputList) {
+					switch(inputList) {
 						case "Customer":
 							input4Address = addNewListEntryFromUser("Address", "House number", "Street name", "Town or city", "County", "Postal Code");
 							break;
@@ -859,20 +857,20 @@ public static void addMenuData(){
 						break;
 					}if(input4 != "Error" || input4Address != null) {
 						clearScreen();
-          switch(inputList) {
+						switch(inputList) {
 							case "Customer":
 								input5 = getNoBlankString(val5);
 								break;
 							case "Address":
 								input5 = getNoBlankString(val5);
 								break;
-						} if(input5 != "Error") {
+						}if(input5 != "Error") {
 							switch(inputList) {
 								case "Product":
 									clearScreen();
-                int newPriceEntryAsInt = Integer.parseInt(input3);
+									int newPriceEntryAsInt = Integer.parseInt(input3);
 									double newPriceEntry = newPriceEntryAsInt;
-                if ((newPriceEntry/100) % 1 != 0) {
+									if ((newPriceEntry/100) % 1 != 0) {
 										System.out.println(">>> SKU: " + input1 + ", " + input2 + ", price = £" + (newPriceEntry/100) + " <<<");
 									} else {
 										System.out.println(">>> SKU: " + input1 + ", " + input2 + ", price = £" + (newPriceEntry/100) + "0 <<<");
@@ -880,20 +878,20 @@ public static void addMenuData(){
 									confirmAdd = getYesNoChoice();
 									if (Character.toUpperCase(confirmAdd) == 'Y') {
 										products.add(new Product(input1, input2, newPriceEntry));
-                  clearScreen();
-                  System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nYour " + inputList + " \"" + input2 + "\" has been added!\n" + lineBreaker + lineBreaker + lineBreaker);
-                  printProductsToFile();
+										clearScreen();
+										System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nYour " + inputList + " \"" + input2 + "\" has been added!\n" + lineBreaker + lineBreaker + lineBreaker);
+										printProductsToFile();
 									}return input4Address;
 								case "Customer":
 									clearScreen();
 									System.out.println("ID: " + input1 + ", " + input2 + " " + input3 + "\nAddresss: " + input4Address.toString() + "\nTel no. " + input5 + " ");
-                System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nAre you sure you want to add this " + inputList + " ?\n" + lineBreaker + lineBreaker + lineBreaker + "\n");
+									System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nAre you sure you want to add this " + inputList + " ?\n" + lineBreaker + lineBreaker + lineBreaker + "\n");
 									confirmAdd = getYesNoChoice();
 									if (Character.toUpperCase(confirmAdd) == 'Y') {
 										customers.add(new Customer(input1, input2, input3, new Address(input4Address.getHouse(),input4Address.getAddressLine1(), input4Address.getAddressLine2(), input4Address.getCounty(), input4Address.getPostCode()), input5));
 										clearScreen();
-                  System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nYour " + inputList + "\" " + input2 + " " + input3 + "\" has been added!\n" + lineBreaker + lineBreaker + lineBreaker);
-                  printCustomersToFile();
+										System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nYour " + inputList + "\" " + input2 + " " + input3 + "\" has been added!\n" + lineBreaker + lineBreaker + lineBreaker);
+										printCustomersToFile();
 									} return input4Address;	
 								case "Address":
 									input4Address = new Address(input1, input2, input3, input4, input5);
@@ -902,14 +900,14 @@ public static void addMenuData(){
 									clearScreen();
 									Customer c = returnCustomerFromStringExact(input1);
 									System.out.println("------------ ORDER ID - " + input2 + " ------------\nCustomer name: " + c.getFirstName() + " " + c.getSecondName() + ". Order complete: false");
-                System.out.println(lineBreaker + lineBreaker + lineBreaker + "-------\nAre you sure you want to add this " + inputList + " ?\n" + lineBreaker + lineBreaker + lineBreaker + "\n");
+									System.out.println(lineBreaker + lineBreaker + lineBreaker + "-------\nAre you sure you want to add this " + inputList + " ?\n" + lineBreaker + lineBreaker + lineBreaker + "\n");
 									confirmAdd = getYesNoChoice();
 									if (Character.toUpperCase(confirmAdd) == 'Y') {
 										orders.add(new Order(c, Integer.parseInt(input2), false));
 										clearScreen();
-                  System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nYour " + inputList + " has been added!\n" + lineBreaker + lineBreaker + lineBreaker +"\n\n Would you like to add some items to this Order? (y/n)?");
+										System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nYour " + inputList + " has been added!\n" + lineBreaker + lineBreaker + lineBreaker +"\n\n Would you like to add some items to this Order? (y/n)?");
 										printOrdersToFile();
-                  confirm = getYesNoChoice();
+										confirm = getYesNoChoice();
 										if (Character.toUpperCase(confirm) == 'Y') {
 											char continueLooping = 'Y';
 											while(Character.toUpperCase(continueLooping) != 'N') {	
@@ -920,15 +918,15 @@ public static void addMenuData(){
 													confirm = getYesNoChoice();
 													if (Character.toUpperCase(confirm) == 'Y') {
 														if(checkStockLevelOnRemoval(p,1) == false){
-                          Order o = returnOrderFromStringExact(input2);
+															Order o = returnOrderFromStringExact(input2);
 														o.addItems(p);
-                          printOrdersToFile();
+														printOrdersToFile();
 														clearScreen();
-                          System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\n" + p.toString() + " has been added to Order number: " + input2 + "!\n" + lineBreaker + lineBreaker + lineBreaker +    "\n\nWould you like to add any more items to this Order? (y/n)?");
+														System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\n" + p.toString() + " has been added to Order number: " + input2 + "!\n" + lineBreaker + lineBreaker + lineBreaker +    "\n\nWould you like to add any more items to this Order? (y/n)?");
 														continueLooping = getYesNoChoice();
-                          }else {System.out.println("Error! Stock cannot be reduced below zero.\nWould you like to continue adding items to this Order?");
-                          continueLooping = getYesNoChoice();
-                          }
+														}else {System.out.println("Error! Stock cannot be reduced below zero.\nWould you like to continue adding items to this Order?");
+														continueLooping = getYesNoChoice();
+														}
 													}
 												} else {
 													System.out.println(excessiveErrors + "\nWould you like to continue adding items to this Order?");
@@ -964,7 +962,7 @@ public static void addMenuData(){
 			System.out.println(excessiveErrorsSearch);	
 		} else {
 			clearScreen();
-    switch(inputList) {
+			switch(inputList) {
 				case "Product":
 					pToChange = returnProductFromStringExact(existingTest);
 					System.out.println(lineBreaker + lineBreaker + lineBreaker + "\n" + pToChange.toString() + "\n"+ lineBreaker + lineBreaker + lineBreaker + "\n\n" + confirmProduct);
@@ -991,8 +989,7 @@ public static void addMenuData(){
 			}
 			confirm = getYesNoChoice();
 			if (Character.toUpperCase(confirm) == 'Y') {
-				
-      confirm = 'N';
+				confirm = 'N';
 				System.out.println("\n" + confirmToChange);
 				confirm = getYesNoChoice();
 			}if (Character.toUpperCase(confirm) == 'Y') {
@@ -1004,7 +1001,7 @@ public static void addMenuData(){
 						confirm = 'Y';
 						break outerloop;
 					}clearScreen();
-        switch(inputType) {
+					switch(inputType) {
 						case "Product description":
 							oldEntry = pToChange.getDescription();
 							newEntry = getNonDuplicateStringFromUser(inputType, inputList);
@@ -1012,11 +1009,11 @@ public static void addMenuData(){
 						case "price you wish the product to be in pence":
 							oldPrice = pToChange.getPrice();
 							newEntry = testStringToInt("price you wish the product to be in pence", "Product", "NoBlank");
-            if(newEntry == "Error"){
-              confirm = 'Y';
-              loopCount = 4;
-              break outerloop;
-            } int newPriceAsInt = Integer.parseInt(newEntry);
+							if(newEntry == "Error"){
+								confirm = 'Y';
+								loopCount = 4;
+								break outerloop;
+							} int newPriceAsInt = Integer.parseInt(newEntry);
 							newPrice = (double)newPriceAsInt;
 							break;
 						case "Name":
@@ -1042,7 +1039,7 @@ public static void addMenuData(){
 										newEntry = "true";
 									} else if (confirm2 == 'N') {
 										newEntry = "Error";
-                  confirm = 'N';
+										confirm = 'N';
 									} break;
 								case "false":
 									System.out.println("Do you want to close this order? (y/n)");
@@ -1051,52 +1048,52 @@ public static void addMenuData(){
 										newEntry = "false";
 									} else if (confirm2 == 'N') {
 										newEntry = "Error";
-                  confirm = 'N';
+										confirm = 'N';
 									} break;
 							} break;
 					}if((newEntry != "Error" && newEntry2 !="Error") || aToChange != null) {
 						clearScreen();
-          switch(inputType) {
-						case "Product description":
-							System.out.println("Are you sure you want to change the " + inputMessage + "to \"" + newEntry + "\"?");
-							confirm = getYesNoChoice();
-							break;
-						case "price you wish the product to be in pence":
-							if ((newPrice/100) % 1 != 0) {
-								System.out.println("Are you sure you want to change the " + inputList + " " + inputMessage + " to \" £" + (newPrice/100) + " \"?");
-							} else {
-								System.out.println("Are you sure you want to change the " + inputList + " " + inputMessage + " to \"£" + (newPrice/100) + "0 \"?");
-							}confirm = getYesNoChoice();
-							break;
-						case "Name":
-							System.out.println("Are you sure you want to change the " + inputList + " " + inputMessage + " to \"" + newEntry + " " + newEntry2 + "\"?");
-							confirm = getYesNoChoice();
-							break;
-						case "Telephone number":
-							System.out.println("Are you sure you want to change the " + inputList + " " + inputMessage + " to \"" + newEntry + "\"?");
-							confirm = getYesNoChoice();
-							break;
-						case "Address":
-							System.out.println("Are you sure you want to change the customer " + inputMessage + " to \"" + aToChange.toString() + "\"?");
-							confirm = getYesNoChoice();
-							break;
-						case "Complete":
-							confirm = 'Y';
-							break;
+						switch(inputType) {
+							case "Product description":
+								System.out.println("Are you sure you want to change the " + inputMessage + "to \"" + newEntry + "\"?");
+								confirm = getYesNoChoice();
+								break;
+							case "price you wish the product to be in pence":
+								if ((newPrice/100) % 1 != 0) {
+									System.out.println("Are you sure you want to change the " + inputList + " " + inputMessage + " to \" £" + (newPrice/100) + " \"?");
+								} else {
+									System.out.println("Are you sure you want to change the " + inputList + " " + inputMessage + " to \"£" + (newPrice/100) + "0 \"?");
+								}confirm = getYesNoChoice();
+								break;
+							case "Name":
+								System.out.println("Are you sure you want to change the " + inputList + " " + inputMessage + " to \"" + newEntry + " " + newEntry2 + "\"?");
+								confirm = getYesNoChoice();
+								break;
+							case "Telephone number":
+								System.out.println("Are you sure you want to change the " + inputList + " " + inputMessage + " to \"" + newEntry + "\"?");
+								confirm = getYesNoChoice();
+								break;
+							case "Address":
+								System.out.println("Are you sure you want to change the customer " + inputMessage + " to \"" + aToChange.toString() + "\"?");
+								confirm = getYesNoChoice();
+								break;
+							case "Complete":
+								confirm = 'Y';
+								break;
 						} 
 					} 
 				} if (Character.toUpperCase(confirm) == 'Y') {
 					if (loopCount < 3) {
 						clearScreen();
-          switch(inputType) {
+						switch(inputType) {
 							case "Product description":
 								pToChange.setDescription(newEntry);
 								System.out.println("SUCCESS!\nThe description of the product has been change from \"" + oldEntry + "\" to \"" + newEntry + "\"!");
-              printProductsToFile();
+								printProductsToFile();
 								break;
 							case "price you wish the product to be in pence":
 								pToChange.setPrice(newPrice);
-              printProductsToFile();
+								printProductsToFile();
 								if ((newPrice/100) % 1 == 0 && (oldPrice/100) % 1 == 0) {
 									System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nThe price of \"" + pToChange.getDescription() + "\" has changed from £" + (oldPrice/100) + "0 to £" + (pToChange.getPrice()/100) + "0 !\n"+ lineBreaker + lineBreaker + lineBreaker + "\n");
 								} else if((newPrice/100) % 1 == 0 && (oldPrice/100) % 1 != 0){
@@ -1111,28 +1108,28 @@ public static void addMenuData(){
 							case "Name":
 								cToChange.setFirstName(newEntry);
 								cToChange.setSecondName(newEntry2);
-              printCustomersToFile();
+								printCustomersToFile();
 								System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nThe customers name has been changed from \"" + oldEntry + "\" to \"" + cToChange.getFirstName() + " " + cToChange.getSecondName() + "\"!\n" + lineBreaker + lineBreaker + lineBreaker + "\n");
 								break;
 							case "Telephone number":
 								cToChange.setTelephoneNumber(newEntry);
 								System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nThe telephone number of the customer has been changed from \"" + oldEntry + "\" to \"" + newEntry + "\"!\n" + lineBreaker + lineBreaker + lineBreaker + "\n");
-              printCustomersToFile();
+								printCustomersToFile();
 								break;
 							case "Address":
 								cToChange.setAddress(aToChange);
 								System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nThe address of the customer has been changed from \"" + oldEntry + "\" to \"" + aToChange + "\"!\n" + lineBreaker + lineBreaker + lineBreaker + "\n");
-              printCustomersToFile();
+								printCustomersToFile();
 								break;
 							case "Complete":
 								if(oldEntry == "true") {
 									System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nOrder number " + existingTest +  " has been re-opened!\n" + lineBreaker + lineBreaker + lineBreaker + "\n");
-                oToChange.setComplete(false);
-                printOrdersToFile();
+									oToChange.setComplete(false);
+									printOrdersToFile();
 								} else if(oldEntry == "false") {
 									System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nOrder number " + existingTest +  " has been closed!\n" + lineBreaker + lineBreaker + lineBreaker + "\n");
-                oToChange.setComplete(true);
-                printOrdersToFile();
+									oToChange.setComplete(true);
+									printOrdersToFile();
 								} break;
 						}
 					} else {
@@ -1146,56 +1143,54 @@ public static void addMenuData(){
 	static void addItemToExisitingOrder() {
 		String excessiveErrors = (lineBreaker + lineBreaker + lineBreaker + "\nIt looks like you don't have the right Order ID\n" + lineBreaker + lineBreaker + lineBreaker);
 		Order o;
-  clearScreen();
+		clearScreen();
 		existingTest = getExistingStringInLists("Order ID", "Order");
 		if(existingTest != "Error") {
 			o= returnOrderFromStringExact(existingTest);
-    clearScreen();
-    System.out.println(o.toString()+ "\n        >>>>>>>> ITEMS <<<<<<<<");
-    printItemsfromOrder (o);
+			clearScreen();
+			System.out.println(o.toString()+ "\n        >>>>>>>> ITEMS <<<<<<<<");
+			printItemsfromOrder (o);
 			char continueLooping = 'Y';
 			while(Character.toUpperCase(continueLooping) != 'N') {	
 				inputString = getExistingStringInLists("SKU Code", "Product");
 				if(inputString != "Error") {
-          Product p = returnProductFromStringExact(inputString);
-          if(checkStockLevelOnRemoval(p,1) == true){
-            clearScreen();
-            System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nAre you sure you want to add " + p.getDescription() + " to Order number " + o.getOrderID() + " ?\n" + lineBreaker + lineBreaker + lineBreaker);
-            confirm = getYesNoChoice();
-            if (Character.toUpperCase(confirm) == 'Y') {
-              o.addItems(p);
-              p.removeStock(1);
-              printOrdersToFile();
-              printProductsToFile();
-              clearScreen();
-              System.out.println(lineBreaker + lineBreaker + lineBreaker + "\n            >>>>>>>>SUCCESS!<<<<<<<<\n" + p.getDescription() + " has been added to Order number: " +  o.getOrderID() + "!\n" + lineBreaker + lineBreaker + lineBreaker + "\n\nWould you like to add any more items to this Order? (y/n)?");
-              continueLooping = getYesNoChoice();
-            }
-          } else {
-            	System.out.println("        >>>>>>>>> OUT OF STOCK <<<<<<<<<. \nWould you like to continue adding items to this Order?");
-					      continueLooping = getYesNoChoice();
-          }
-
+					Product p = returnProductFromStringExact(inputString);
+					if(checkStockLevelOnRemoval(p,1) == true){
+						clearScreen();
+						System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nAre you sure you want to add " + p.getDescription() + " to Order number " + o.getOrderID() + " ?\n" + lineBreaker + lineBreaker + lineBreaker);
+						confirm = getYesNoChoice();
+						if (Character.toUpperCase(confirm) == 'Y') {
+							o.addItems(p);
+							p.removeStock(1);
+							printOrdersToFile();
+							printProductsToFile();
+							clearScreen();
+							System.out.println(lineBreaker + lineBreaker + lineBreaker + "\n            >>>>>>>>SUCCESS!<<<<<<<<\n" + p.getDescription() + " has been added to Order number: " +  o.getOrderID() + "!\n" + lineBreaker + lineBreaker + lineBreaker + "\n\nWould you like to add any more items to this Order? (y/n)?");
+							continueLooping = getYesNoChoice();
+						}
+					} else {
+						System.out.println("        >>>>>>>>> OUT OF STOCK <<<<<<<<<. \nWould you like to continue adding items to this Order?");
+						continueLooping = getYesNoChoice();
+					}
 				} else {
 					System.out.println(excessiveErrors + "\nWould you like to continue adding items to this Order?");
 					continueLooping = getYesNoChoice();
 				}
 			}
-			
-			} else {
-				System.out.println(excessiveErrors);
-			}
+		} else {
+			System.out.println(excessiveErrors);
+		}
 	}
 
 	static void removeItemFromExisitingOrder() {
 		String excessiveErrors = (lineBreaker + lineBreaker + lineBreaker + "\nIt looks like you don't have the right Order ID\n" + lineBreaker + lineBreaker + lineBreaker);
 		Order o;
 		clearScreen();
-  existingTest = getExistingStringInLists("Order ID", "Order");
+		existingTest = getExistingStringInLists("Order ID", "Order");
 		if(existingTest != "Error") {
 			o= returnOrderFromStringExact(existingTest);
 			clearScreen();
-    System.out.println(o.toString()+ "\n        >>>>>>>> ITEMS <<<<<<<<");
+			System.out.println(o.toString()+ "\n        >>>>>>>> ITEMS <<<<<<<<");
 			printItemsfromOrder (o);
 			char continueLooping = 'Y';
 			while(Character.toUpperCase(continueLooping) != 'N') {	
@@ -1221,13 +1216,13 @@ public static void addMenuData(){
 				     } 
 				}
 				clearScreen();
-        System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nAre you sure you want to remove " + o.items.get(intToDelete).getDescription() + " from Order number " + o.getOrderID() + " ?\n" + lineBreaker + lineBreaker + lineBreaker);
+				System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nAre you sure you want to remove " + o.items.get(intToDelete).getDescription() + " from Order number " + o.getOrderID() + " ?\n" + lineBreaker + lineBreaker + lineBreaker);
 				confirm = getYesNoChoice();
 				if (Character.toUpperCase(confirm) == 'Y') {
 					o.removeItems(o.items.get(intToDelete));
-        printOrdersToFile();
+					printOrdersToFile();
 					clearScreen();
-        System.out.println(lineBreaker + lineBreaker + lineBreaker + "\n              >>>>>>>>SUCCESS!<<<<<<<<\nThe item has been removed from Order number: " +  o.getOrderID() + "!\n" + lineBreaker + lineBreaker + lineBreaker + "\n\nWould you like to remove any more items from this Order? (y/n)?");
+					System.out.println(lineBreaker + lineBreaker + lineBreaker + "\n              >>>>>>>>SUCCESS!<<<<<<<<\nThe item has been removed from Order number: " +  o.getOrderID() + "!\n" + lineBreaker + lineBreaker + lineBreaker + "\n\nWould you like to remove any more items from this Order? (y/n)?");
 					continueLooping = getYesNoChoice();
 				}
 			}
@@ -1239,7 +1234,7 @@ public static void addMenuData(){
 	static void addStockToProduct(Product p) {
 		String excessiveErrors = (lineBreaker + lineBreaker + lineBreaker + "\nIt looks like you aren't inputting a number\n" + lineBreaker + lineBreaker + lineBreaker);
 		clearScreen();
-  inputIntTest = testStringToInt("amount of stock to add", "", "NoBlank");
+		inputIntTest = testStringToInt("amount of stock to add", "", "NoBlank");
 		if(inputIntTest != "Error") {
 			int oldStock = p.getStockCount();
 			System.out.println(lineBreaker + lineBreaker + lineBreaker +  "\nCurrent stock is " + oldStock + ". The new stock count will be " + (oldStock + Integer.parseInt(inputIntTest)) + ".\n" +lineBreaker + lineBreaker + lineBreaker + "\n");
@@ -1247,7 +1242,7 @@ public static void addMenuData(){
 			confirm = getYesNoChoice();
 			if (Character.toUpperCase(confirm) == 'Y') {
 				p.addStock(Integer.parseInt(inputIntTest));
-      printProductsToFile();
+				printProductsToFile();
 				System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nThe stock for " +  p.getDescription() + " has been updated to " + p.getStockCount() + "!\n" + lineBreaker + lineBreaker + lineBreaker); 
 			}
 		} else {
@@ -1258,41 +1253,41 @@ public static void addMenuData(){
 	static void removeStockFromProduct(Product p) {
 		String excessiveErrors = (lineBreaker + lineBreaker + lineBreaker + "\nIt looks like you aren't inputting a number\n" + lineBreaker + lineBreaker + lineBreaker);
 		clearScreen();
-  inputIntTest = testStringToInt("amount of stock to remove", "", "NoBlank");
+		inputIntTest = testStringToInt("amount of stock to remove", "", "NoBlank");
 		if(inputIntTest != "Error") {
 			int oldStock = p.getStockCount();
 			int stockToRemove = Integer.parseInt(inputIntTest);
-    if (checkStockLevelOnRemoval(p,stockToRemove) == true){
-        System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nCurrent stock is " + oldStock + ". The new stock count will be " + (oldStock - stockToRemove) + ".\n" + lineBreaker + lineBreaker + lineBreaker + "\n");
-        System.out.println("Are you sure you want to make this change? (y/n)");
-        confirm = getYesNoChoice();
-        if (Character.toUpperCase(confirm) == 'Y') {
-          p.removeStock(Integer.parseInt(inputIntTest));
-          printProductsToFile();
-          System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nThe stock for " + p.getDescription() + " has been updated to " + p.getStockCount() + "!\n" + lineBreaker + lineBreaker + lineBreaker); 
-        }
-    }else {
-      System.out.println("Stock levels cant be reducued below zero. Please press any key to continue");
-      in.nextLine();
-    }
+			if (checkStockLevelOnRemoval(p,stockToRemove) == true){
+				System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nCurrent stock is " + oldStock + ". The new stock count will be " + (oldStock - stockToRemove) + ".\n" + lineBreaker + lineBreaker + lineBreaker + "\n");
+				System.out.println("Are you sure you want to make this change? (y/n)");
+				confirm = getYesNoChoice();
+				if (Character.toUpperCase(confirm) == 'Y') {
+					p.removeStock(Integer.parseInt(inputIntTest));
+					printProductsToFile();
+					System.out.println(lineBreaker + lineBreaker + lineBreaker + "\nSUCCESS!\nThe stock for " + p.getDescription() + " has been updated to " + p.getStockCount() + "!\n" + lineBreaker + lineBreaker + lineBreaker); 
+				}
+			}else {
+				System.out.println("Stock levels cant be reducued below zero. Please press any key to continue");
+				in.nextLine();
+			}
 		} else {
 			System.out.println(excessiveErrors);
 		}
 	}
 
-static boolean checkStockLevelOnRemoval(Product p, int i) { //cant understand why this is returning the opposite of what I expect
-    boolean stockCountAboveZero;
-    int stockCountForProduct = p.getStockCount();
-    int amountToRemove = i;
-    int amountRemaining = stockCountForProduct - amountToRemove;
-    if(0 > amountRemaining) {
-      stockCountAboveZero = false;
-    } else{
-      stockCountAboveZero = true;
-    } return stockCountAboveZero;
-}
+	static boolean checkStockLevelOnRemoval(Product p, int i) { //cant understand why this is returning the opposite of what I expect
+	    boolean stockCountAboveZero;
+	    int stockCountForProduct = p.getStockCount();
+	    int amountToRemove = i;
+	    int amountRemaining = stockCountForProduct - amountToRemove;
+	    if(0 > amountRemaining) {
+	      stockCountAboveZero = false;
+	    } else{
+	      stockCountAboveZero = true;
+	    } return stockCountAboveZero;
+	}
 
-static void printAllIncompleteOrders() {
+	static void printAllIncompleteOrders() {
 		for (int i = 0;i<orders.size();i++) {
 			orderSum = 0;
 			Order o = orders.get(i);
@@ -1303,90 +1298,90 @@ static void printAllIncompleteOrders() {
 		} 
 	}	
 
-static void printProductsToFile(){
-  try {
-      FileOutputStream fos = new FileOutputStream("productList.txt");
-      ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(products);
-        oos.flush();
-      oos.close();
-      } catch (IOException ex) {
-      ex.printStackTrace();
-      }
-}
+	static void printProductsToFile(){
+	  try {
+	      FileOutputStream fos = new FileOutputStream("productList.txt");
+	      ObjectOutputStream oos = new ObjectOutputStream(fos);
+	        oos.writeObject(products);
+	        oos.flush();
+	      oos.close();
+	      } catch (IOException ex) {
+	      ex.printStackTrace();
+	      }
+	}
 
-static void printCustomersToFile(){
-  try {
-      FileOutputStream fos = new FileOutputStream("customerList.txt");
-      ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(customers);
-        oos.flush();
-      oos.close();
-      } catch (IOException ex) {
-      ex.printStackTrace();
-      }
-}
+	static void printCustomersToFile(){
+	  try {
+	      FileOutputStream fos = new FileOutputStream("customerList.txt");
+	      ObjectOutputStream oos = new ObjectOutputStream(fos);
+	        oos.writeObject(customers);
+	        oos.flush();
+	      oos.close();
+	      } catch (IOException ex) {
+	      ex.printStackTrace();
+	      }
+	}
 
- static void printOrdersToFile(){
-  try {
-      FileOutputStream fos = new FileOutputStream("ordersList.txt");
-      ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(orders);
-        oos.flush();
-      oos.close();
-      } catch (IOException ex) {
-      ex.printStackTrace();
-      }
-}
-
-
-static void readFromProductsFile(){
-  try {
-      FileInputStream fis = new FileInputStream("productList.txt");
-      ObjectInputStream ois = new ObjectInputStream(fis);
-      products = (ArrayList<Product>) ois.readObject();
-      ois.close();
-      } catch (IOException ex) {
-        ex.printStackTrace();
-      }
-      catch(ClassNotFoundException c){
-           System.out.println("Class not found");
-           c.printStackTrace();
-           return;
-        }
-}
-
-static void readFromOrdersFile(){
-  try {
-      FileInputStream fis = new FileInputStream("ordersList.txt");
-      ObjectInputStream ois = new ObjectInputStream(fis);
-      orders = (ArrayList<Order>) ois.readObject();
-      ois.close();
-      } catch (IOException ex) {
-        ex.printStackTrace();
-      }
-      catch(ClassNotFoundException c){
-           System.out.println("Class not found");
-           c.printStackTrace();
-           return;
-        }
-}
+	 static void printOrdersToFile(){
+	  try {
+	      FileOutputStream fos = new FileOutputStream("ordersList.txt");
+	      ObjectOutputStream oos = new ObjectOutputStream(fos);
+	        oos.writeObject(orders);
+	        oos.flush();
+	      oos.close();
+	      } catch (IOException ex) {
+	      ex.printStackTrace();
+	      }
+	}
 
 
-static void readFromCustomerFile(){
-  try {
-      FileInputStream fis = new FileInputStream("customerList.txt");
-      ObjectInputStream ois = new ObjectInputStream(fis);
-      customers = (ArrayList<Customer>) ois.readObject();
-      ois.close();
-      } catch (IOException ex) {
-        ex.printStackTrace();
-      }
-      catch(ClassNotFoundException c){
-           System.out.println("Class not found");
-           c.printStackTrace();
-           return;
-        }
-}
+	static void readFromProductsFile(){
+	  try {
+	      FileInputStream fis = new FileInputStream("productList.txt");
+	      ObjectInputStream ois = new ObjectInputStream(fis);
+	      products = (ArrayList<Product>) ois.readObject();
+	      ois.close();
+	      } catch (IOException ex) {
+	        ex.printStackTrace();
+	      }
+	      catch(ClassNotFoundException c){
+	           System.out.println("Class not found");
+	           c.printStackTrace();
+	           return;
+	        }
+	}
+
+	static void readFromOrdersFile(){
+	  try {
+	      FileInputStream fis = new FileInputStream("ordersList.txt");
+	      ObjectInputStream ois = new ObjectInputStream(fis);
+	      orders = (ArrayList<Order>) ois.readObject();
+	      ois.close();
+	      } catch (IOException ex) {
+	        ex.printStackTrace();
+	      }
+	      catch(ClassNotFoundException c){
+	           System.out.println("Class not found");
+	           c.printStackTrace();
+	           return;
+	        }
+	}
+
+
+	static void readFromCustomerFile(){
+	  try {
+	      FileInputStream fis = new FileInputStream("customerList.txt");
+	      ObjectInputStream ois = new ObjectInputStream(fis);
+	      customers = (ArrayList<Customer>) ois.readObject();
+	      ois.close();
+	      } catch (IOException ex) {
+	        ex.printStackTrace();
+	      }
+	      catch(ClassNotFoundException c){
+	           System.out.println("Class not found");
+	           c.printStackTrace();
+	           return;
+	      }
+	}
 
 }	
